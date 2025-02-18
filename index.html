@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Add style -->
+	<link rel="stylesheet" text="text/css" href="style.css">
+
+	<title>Exercise 4: Operators & Variables</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<h1 id="digital converter">digital converter</h1>
+		<img src="php.jpg" alt="peso">
+			<form>
+				<label> Enter a value: </label>
+				<input type="text" name="value-in-peso" id="peso-value">
+			</form>
+		<p id="currency">Click the buttons below to convert your imput to different currencies.</p>
+
+		<button type= "button" class="btn btn-outline-success" onclick="toUSD()">USD</button>
+		<button type="button" class="btn btn-outline-success" onclick="toYEN()">YEN</button>
+		<button type="button" class="btn btn-outline-success" onClick="window.location.reload()">refresh</button>
+	</div>
+
+	<script type="text/javascript">
+		function toUSD(php){
+			var php= document.getElementById('peso-value').value; 
+			//peso value is the id of the imput type
+				var usd= 58; 
+				var peso_usd=php/usd;
+				var round_peso_usd=peso_usd.toFixed(2);
+
+			// php-usd: 100/58
+			document.getElementById ('currency').innerHTML=
+			'the converted value of your entry to USD is ' + '$'+ '<kdb>' + round_peso_usd
+		}
+	</script>
+
+	<script type="text/javascript">
+		function toYEN(php){
+			var php= document.getElementById('peso-value').value; 
+				var jpy= 2.65;	
+				var peso_yen=jpy*php;
+				var round_peso_yen=peso_yen.toFixed(2);
+
+			// php-yen: 100*2.65
+			document.getElementById ('currency').innerHTML=
+			'the converted value of P100 to yen is ' + '&yen' + '<kdb>' + round_peso_yen
+		}
+	</script>
+
+
+	<div class="footer"> 
+		<hr><p> &#169; 2025 | ICT | Exercise 3: Functions | Yao, Francesca </p>
+	</div>
+</body>
+</html>
